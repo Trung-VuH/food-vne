@@ -1,0 +1,6 @@
+{
+  "name": "Thư viện Ẩm thực VnExpress",
+  "description": "Nền tảng tìm kiếm quán ăn, nhà hàng khắp Việt Nam theo phong cách của VnExpress.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

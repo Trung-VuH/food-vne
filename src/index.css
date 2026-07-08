@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Helvetica Neue", Arial, sans-serif;
+  
+  --color-vne-red: #9f224e;
+  --color-vne-border: #e5e5e5;
+  --color-vne-gray: #757575;
+  --color-vne-bg: #f7f7f7;
+  --color-vne-body: #F0F2F5;
+  --color-vne-text: #222222;
+  --color-vne-title: #111111;
+}
+
+body {
+  background-color: var(--color-vne-body);
+  color: var(--color-vne-text);
+  font-family: var(--font-sans);
+}
