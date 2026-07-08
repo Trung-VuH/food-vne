@@ -1,4 +1,5 @@
 import { Restaurant } from '../types';
+import phoBatDanThumb from '../assets/images/pho_bat_dan_1783474865349.jpg';
 
 export const mockRestaurants: Restaurant[] = [
   {
@@ -54,9 +55,9 @@ export const mockRestaurants: Restaurant[] = [
     area: 'Đà Lạt',
     ward: 'Phường 1',
     address: '1/29 Hoàng Diệu, Phường 1',
-    thumbnail: 'https://images.unsplash.com/photo-1605634591522-aeb6a13db430?auto=format&fit=crop&q=80&w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&q=80&w=800',
     images: [
-      'https://images.unsplash.com/photo-1605634591522-aeb6a13db430?auto=format&fit=crop&q=80&w=800'
+      'https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&q=80&w=800'
     ],
     lead: 'Quán lẩu bò huyền thoại tại Đà Lạt, luôn tấp nập khách du lịch và người dân địa phương.',
     signatureDishes: ['Lẩu bò', 'Bò nướng'],
@@ -96,9 +97,9 @@ export const mockRestaurants: Restaurant[] = [
     area: 'Hoàn Kiếm',
     ward: 'Cửa Đông',
     address: '49 Bát Đàn, Phường Cửa Đông',
-    thumbnail: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cb438?auto=format&fit=crop&q=80&w=800',
+    thumbnail: phoBatDanThumb,
     images: [
-      'https://images.unsplash.com/photo-1582878826629-29b7ad1cb438?auto=format&fit=crop&q=80&w=800'
+      phoBatDanThumb
     ],
     lead: 'Quán phở truyền thống danh tiếng, thực khách xếp hàng từ sáng sớm để thưởng thức.',
     signatureDishes: ['Phở tái', 'Phở nạm', 'Phở gầu'],

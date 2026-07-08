@@ -6,6 +6,24 @@ import { mockRestaurants } from '../data/restaurants';
 import { RestaurantCard } from '../components/RestaurantCard';
 import { generateSlug } from '../utils/slugify';
 
+import phoImage from '../assets/images/pho_bowl_1783475044486.jpg';
+import bunChaImage from '../assets/images/bun_cha_1783475057147.jpg';
+import comTamImage from '../assets/images/com_tam_1783475068302.jpg';
+import huTieuImage from '../assets/images/hu_tieu_1783475079479.jpg';
+import bunDauImage from '../assets/images/bun_dau_1783475092169.jpg';
+import goiCuonImage from '../assets/images/goi_cuon_1783475103456.jpg';
+import banhMiImage from '../assets/images/banh_mi_1783475114335.jpg';
+import bunRieuImage from '../assets/images/bun_rieu_1783475126504.jpg';
+
+import daNangImage from '../assets/images/da_nang_1783475321043.jpg';
+import haNoiImage from '../assets/images/ha_noi_1783475288365.jpg';
+import tpHcmImage from '../assets/images/tp_hcm_1783475337624.jpg';
+import khanhHoaImage from '../assets/images/khanh_hoa_1783475304670.jpg';
+import thuaThienHueImage from '../assets/images/thua_thien_hue_1783475350195.jpg';
+import quangNamImage from '../assets/images/quang_nam_1783475361695.jpg';
+import lamDongImage from '../assets/images/lam_dong_1783475372930.jpg';
+import kienGiangImage from '../assets/images/kien_giang_1783475385985.jpg';
+
 export const HomePage = () => {
   const [activeRegion, setActiveRegion] = useState('Tất cả');
   
@@ -17,14 +35,14 @@ export const HomePage = () => {
 
   // Group by province for the "Khu vực nổi bật" section
   const [popularProvinces, setPopularProvinces] = useState([
-    { name: 'Đà Nẵng', count: 342, image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&q=80&w=600' },
-    { name: 'Hà Nội', count: 856, image: 'https://images.unsplash.com/photo-1599708153386-62bf3f034eb7?auto=format&fit=crop&q=80&w=600' },
-    { name: 'TP.HCM', count: 1240, image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&q=80&w=600' },
-    { name: 'Khánh Hòa', count: 215, image: 'https://images.unsplash.com/photo-1559535338-724d1db8cb24?auto=format&fit=crop&q=80&w=600' },
-    { name: 'Thừa Thiên Huế', count: 156, image: 'https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=600' },
-    { name: 'Quảng Nam', count: 189, image: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&q=80&w=600' },
-    { name: 'Lâm Đồng', count: 420, image: 'https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&q=80&w=600' },
-    { name: 'Kiên Giang', count: 280, image: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?auto=format&fit=crop&q=80&w=600' },
+    { name: 'Đà Nẵng', count: 342, image: daNangImage },
+    { name: 'Hà Nội', count: 856, image: haNoiImage },
+    { name: 'TP.HCM', count: 1240, image: tpHcmImage },
+    { name: 'Khánh Hòa', count: 215, image: khanhHoaImage },
+    { name: 'Thừa Thiên Huế', count: 156, image: thuaThienHueImage },
+    { name: 'Quảng Nam', count: 189, image: quangNamImage },
+    { name: 'Lâm Đồng', count: 420, image: lamDongImage },
+    { name: 'Kiên Giang', count: 280, image: kienGiangImage },
   ]);
 
   React.useEffect(() => {
@@ -88,21 +106,21 @@ export const HomePage = () => {
         </div>
         <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
           {[
-            { title: 'Phở', location: 'Hà Nội', link: '/ha-noi/quan-pho', image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cb438?auto=format&fit=crop&q=80&w=600' },
+            { title: 'Phở', location: 'Hà Nội', link: '/ha-noi/quan-pho', image: phoImage },
             { title: 'Mì Quảng', location: 'Đà Nẵng', link: '/da-nang/quan-mi-quang', image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=600' },
             { title: 'Bánh xèo', location: 'Nha Trang', link: '/nha-trang/quan-banh-xeo', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&q=80&w=600' },
             { title: 'Bún bò', location: 'Huế', link: '/hue/quan-bun-bo-hue', image: 'https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=600' },
             { title: 'Cơm gà', location: 'Hội An', link: '/hoi-an/quan-com-ga', image: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&q=80&w=600' },
-            { title: 'Bún chả', location: 'Hà Nội', link: '/ha-noi/quan-bun-cha', image: 'https://images.unsplash.com/photo-1698242220138-04f86d634db2?auto=format&fit=crop&q=80&w=600' },
-            { title: 'Cơm tấm', location: 'TP.HCM', link: '/tphcm/quan-com-tam', image: 'https://images.unsplash.com/photo-1652545593838-89f5ceef1915?auto=format&fit=crop&q=80&w=600' },
-            { title: 'Hủ tiếu', location: 'TP.HCM', link: '/tphcm/quan-hu-tieu', image: 'https://images.unsplash.com/photo-1626804475297-41609ea064eb?auto=format&fit=crop&q=80&w=600' },
+            { title: 'Bún chả', location: 'Hà Nội', link: '/ha-noi/quan-bun-cha', image: bunChaImage },
+            { title: 'Cơm tấm', location: 'TP.HCM', link: '/tphcm/quan-com-tam', image: comTamImage },
+            { title: 'Hủ tiếu', location: 'TP.HCM', link: '/tphcm/quan-hu-tieu', image: huTieuImage },
             { title: 'Lẩu gà lá é', location: 'Đà Lạt', link: '/da-lat/quan-lau-ga-la-e', image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=600' },
-            { title: 'Bún đậu', location: 'Hà Nội', link: '/ha-noi/quan-bun-dau', image: 'https://images.unsplash.com/photo-1605333555562-b1e6ce4f15d2?auto=format&fit=crop&q=80&w=600' },
+            { title: 'Bún đậu', location: 'Hà Nội', link: '/ha-noi/quan-bun-dau', image: bunDauImage },
             { title: 'Bánh khọt', location: 'Vũng Tàu', link: '/vung-tau/quan-banh-khot', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&q=80&w=600' },
             { title: 'Bánh cuốn', location: 'Hà Nội', link: '/ha-noi/quan-banh-cuon', image: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=600' },
-            { title: 'Gỏi cuốn', location: 'TP.HCM', link: '/tphcm/quan-goi-cuon', image: 'https://images.unsplash.com/photo-1564630561571-0f723653139a?auto=format&fit=crop&q=80&w=600' },
-            { title: 'Bánh mì', location: 'Hội An', link: '/hoi-an/quan-banh-mi', image: 'https://images.unsplash.com/photo-1627308595229-7830f5c92f70?auto=format&fit=crop&q=80&w=600' },
-            { title: 'Bún riêu', location: 'TP.HCM', link: '/tphcm/quan-bun-rieu', image: 'https://images.unsplash.com/photo-1634626159516-e4d0b1a0e14f?auto=format&fit=crop&q=80&w=600' }
+            { title: 'Gỏi cuốn', location: 'TP.HCM', link: '/tphcm/quan-goi-cuon', image: goiCuonImage },
+            { title: 'Bánh mì', location: 'Hội An', link: '/hoi-an/quan-banh-mi', image: banhMiImage },
+            { title: 'Bún riêu', location: 'TP.HCM', link: '/tphcm/quan-bun-rieu', image: bunRieuImage }
           ].map((dish, index) => (
             <Link 
               key={dish.title} 

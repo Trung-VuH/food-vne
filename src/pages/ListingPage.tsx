@@ -12,24 +12,64 @@ export const ListingPage = () => {
   const [layout, setLayout] = useState<'grid' | 'list'>('list');
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
-  // Extract dish name from slug (e.g. quan-mi-quang -> Mì quảng)
-  // In a real app, you'd look this up in a database
-  const isMiQuang = dishSlug === 'quan-mi-quang';
-  const displayDish = isMiQuang ? 'Mì Quảng' : 'Món ăn';
-  const displayProvince = provinceSlug === 'da-nang' ? 'Đà Nẵng' : 
-                          provinceSlug === 'nha-trang' ? 'Nha Trang' : 'Địa phương';
+  const getProvinceName = (slug?: string) => {
+    const map: Record<string, string> = {
+      'ha-noi': 'Hà Nội',
+      'da-nang': 'Đà Nẵng',
+      'nha-trang': 'Nha Trang',
+      'hue': 'Huế',
+      'tphcm': 'TP.HCM',
+      'da-lat': 'Đà Lạt',
+      'vung-tau': 'Vũng Tàu',
+      'hoi-an': 'Hội An',
+      'quang-nam': 'Quảng Nam',
+      'lam-dong': 'Lâm Đồng',
+      'kien-giang': 'Kiên Giang',
+      'khanh-hoa': 'Khánh Hòa',
+      'thua-thien-hue': 'Thừa Thiên Huế'
+    };
+    return map[slug || ''] || 'Địa phương';
+  };
+
+  const getDishName = (slug?: string) => {
+    const map: Record<string, string> = {
+      'quan-pho': 'Phở',
+      'quan-mi-quang': 'Mì Quảng',
+      'quan-banh-xeo': 'Bánh xèo',
+      'quan-bun-bo-hue': 'Bún bò Huế',
+      'quan-bun-cha': 'Bún chả',
+      'quan-com-tam': 'Cơm tấm',
+      'quan-hu-tieu': 'Hủ tiếu',
+      'quan-lau-ga-la-e': 'Lẩu gà lá é',
+      'quan-bun-dau': 'Bún đậu',
+      'quan-banh-khot': 'Bánh khọt',
+      'quan-banh-cuon': 'Bánh cuốn',
+      'quan-goi-cuon': 'Gỏi cuốn',
+      'quan-banh-mi': 'Bánh mì',
+      'quan-bun-rieu': 'Bún riêu'
+    };
+    return map[slug || ''] || 'Món ăn';
+  };
+
+  const displayDish = getDishName(dishSlug);
+  const displayProvince = getProvinceName(provinceSlug);
 
   // Filter restaurants by criteria (mocking the behavior)
   const filteredRestaurants = mockRestaurants.filter(r => {
     // If it's a specific dish listing, only show restaurants with that signature dish
-    if (dishSlug && isMiQuang) {
-      return r.signatureDishes.some(d => generateSlug(d).includes('mi-quang')) && generateSlug(r.province) === provinceSlug;
+    if (dishSlug && dishSlug !== 'all') {
+      const targetDishSlug = dishSlug.replace('quan-', '');
+      const isDishMatch = r.signatureDishes.some(d => {
+        const dSlug = generateSlug(d);
+        return dSlug.includes(targetDishSlug) || targetDishSlug.includes(dSlug);
+      });
+      if (!isDishMatch) return false;
     }
     // Fallback: just show restaurants in the province
     if (provinceSlug && generateSlug(r.province) === provinceSlug) {
       return true;
     }
-    return true;
+    return false;
   });
 
   const filters = [
@@ -58,10 +98,10 @@ export const ListingPage = () => {
 
         <div className="mb-5">
           <h1 className="text-[24px] font-bold text-vne-title mb-2 leading-[1.2]">
-            Top quán {displayDish} ngon nhất tại {displayProvince}
+            {displayDish} tại {displayProvince}
           </h1>
           <p className="text-vne-gray text-[14px] leading-relaxed">
-            Khám phá danh sách các quán {displayDish.toLowerCase()} được đánh giá cao tại {displayProvince}. Từ những quán ăn vỉa hè lâu đời đến các nhà hàng sang trọng, đáp ứng mọi nhu cầu thưởng thức ẩm thực của bạn.
+            Khám phá danh sách các quán {displayDish.toLowerCase()} ngon và được đánh giá cao tại {displayProvince}.
           </p>
         </div>
 
