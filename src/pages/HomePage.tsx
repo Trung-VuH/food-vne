@@ -4,6 +4,7 @@ import { Filter, Map, UtensilsCrossed, Award } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { mockRestaurants } from '../data/restaurants';
 import { RestaurantCard } from '../components/RestaurantCard';
+import { FilterModal } from '../components/FilterModal';
 import { generateSlug } from '../utils/slugify';
 
 import phoImage from '../assets/images/pho_bowl_1783475044486.jpg';
@@ -26,6 +27,7 @@ import kienGiangImage from '../assets/images/kien_giang_1783475385985.jpg';
 
 export const HomePage = () => {
   const [activeRegion, setActiveRegion] = useState('Tất cả');
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   
   const regions = ['Tất cả', 'Miền Bắc', 'Miền Trung', 'Miền Nam', 'Tây Nguyên'];
   
@@ -80,7 +82,10 @@ export const HomePage = () => {
                 {region}
               </button>
             ))}
-            <button className="flex items-center px-3 py-1.5 rounded-[2px] bg-white border border-vne-border text-vne-gray text-[13px] ml-2 hover:bg-vne-bg">
+            <button 
+              onClick={() => setIsFilterOpen(true)}
+              className="flex items-center px-3 py-1.5 rounded-[2px] bg-white border border-vne-border text-vne-gray text-[13px] ml-2 hover:bg-vne-bg"
+            >
               <Filter className="w-4 h-4 mr-1" /> Bộ lọc
             </button>
           </div>
@@ -177,6 +182,8 @@ export const HomePage = () => {
           </AnimatePresence>
         </div>
       </section>
+
+      <FilterModal isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} />
     </div>
   );
 };

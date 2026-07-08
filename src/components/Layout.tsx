@@ -40,11 +40,15 @@ export const Layout = () => {
       {/* Navigation for Du lịch / Ẩm thực */}
       <div className="bg-white border-b border-vne-border mb-4">
         <div className="max-w-6xl mx-auto px-4">
-          <nav className="flex items-center gap-6 overflow-x-auto whitespace-nowrap py-3 text-[14px] font-medium">
-            <Link to="/" className="text-vne-red font-bold pb-1">Bản đồ</Link>
-            <a href="#" className="text-vne-text hover:text-vne-red transition-colors pb-1">Cẩm nang</a>
-            <a href="#" className="text-vne-text hover:text-vne-red transition-colors pb-1">Michelin Guide</a>
-            <a href="#" className="text-vne-text hover:text-vne-red transition-colors pb-1">Tin tức</a>
+          <nav className="flex items-end gap-6 overflow-x-auto whitespace-nowrap py-3">
+            <Link to="/" className="text-[32px] font-bold text-[#444] leading-none pb-0.5 font-serif">Du lịch</Link>
+            <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Điểm đến</a>
+            <Link to="/" className="text-[#005a96] font-medium transition-colors pb-1 text-[15px]">Ẩm thực</Link>
+            <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Dấu chân</a>
+            <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Tư vấn</a>
+            <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Cẩm nang</a>
+            <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Ảnh</a>
+            <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Video</a>
           </nav>
         </div>
       </div>
