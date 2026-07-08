@@ -13,7 +13,7 @@ export const Layout = () => {
             <Link to="/" className="text-[24px] font-bold text-vne-red flex items-center">
               VnExpress
               <span className="text-vne-text font-normal text-[16px] border-l border-[#ccc] pl-[10px] ml-2 hidden sm:inline-block">
-                Thư viện Ẩm thực
+                Du lịch
               </span>
             </Link>
             <span className="text-vne-gray text-sm hidden md:inline-block border-l border-[#ccc] pl-4 ml-2">
@@ -21,14 +21,6 @@ export const Layout = () => {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <div className="relative hidden md:block">
-              <input 
-                type="text" 
-                placeholder="Tìm kiếm quán ăn, món ăn..." 
-                className="bg-vne-bg border border-vne-border rounded-full px-4 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-vne-gray w-64"
-              />
-              <Search className="w-4 h-4 text-vne-gray absolute right-3 top-2" />
-            </div>
             <div className="flex items-center gap-2 text-sm text-vne-text cursor-pointer hover:text-vne-red font-medium">
               <User className="w-5 h-5 text-vne-gray" />
               <span className="hidden md:inline">Đăng nhập</span>
@@ -41,7 +33,7 @@ export const Layout = () => {
       <div className="bg-white border-b border-vne-border mb-4">
         <div className="max-w-6xl mx-auto px-4">
           <nav className="flex items-end gap-6 overflow-x-auto whitespace-nowrap py-3">
-            <Link to="/" className="text-[32px] font-bold text-[#444] leading-none pb-0.5 font-serif">Du lịch</Link>
+            <Link to="/" className="text-[32px] font-bold text-[#444] leading-none pb-0.5 font-serif">Thư viện Ẩm thực</Link>
             <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Điểm đến</a>
             <Link to="/" className="text-[#005a96] font-medium transition-colors pb-1 text-[15px]">Ẩm thực</Link>
             <a href="#" className="text-[#444] font-medium hover:text-[#005a96] transition-colors pb-1 text-[15px]">Dấu chân</a>

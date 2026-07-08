@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { mockRestaurants } from '../data/restaurants';
 import { RestaurantCard } from '../components/RestaurantCard';
 import { FilterModal } from '../components/FilterModal';
+import { AdvancedSearch } from '../components/AdvancedSearch';
 import { generateSlug } from '../utils/slugify';
 
 import phoImage from '../assets/images/pho_bowl_1783475044486.jpg';
@@ -61,6 +62,8 @@ export const HomePage = () => {
 
   return (
     <div className="space-y-10">
+      <AdvancedSearch />
+      
       {/* Listing Quán ăn */}
       <section>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
