@@ -1,6 +1,15 @@
 import { Restaurant } from '../types';
 import phoBatDanThumb from '../assets/images/pho_bat_dan_1783474865349.jpg';
 
+const michelinArticle = `
+<p>Bếp trưởng người Hàn Quốc nói thêm sẽ không ngừng học hỏi về con người, văn hóa, nguyên liệu Việt để có thể giới thiệu ẩm thực hai nước tới thực khách nhiều hơn. Trước khi đến Việt Nam vào năm 2020, Joon Huyk từng có thời gian dài làm việc tại Nhật Bản, Canada và Philippines. Anh cho biết nhận sao Michelin không chỉ là ước mơ cá nhân mà còn của rất nhiều đầu bếp trên thế giới. Với Joon Hyuk, lần nhận sao này còn có ý nghĩa đặc biệt hơn nữa khi anh là đầu bếp Hàn Quốc và được vinh danh tại Việt Nam.</p>
+<p>"Ngoài vui mừng và hạnh phúc, tôi cũng cảm thấy có trách nhiệm hơn trong việc giới thiệu văn hóa, ẩm thực giao thoa giữa hai nền văn hóa", chef Joon Hyuk nói.</p>
+<p>Các loại đồ uống có cồn tại nhà hàng gồm vang châu Âu cùng các loại đồ uống truyền thống của Hàn Quốc. Mai Bích Ngọc, 27 tuổi, nhân viên của Onvit cũng được Michelin vinh danh ở giải thưởng Chuyên gia nếm rượu tối 4/6. Ngọc từng có ba năm du học tại Thụy Sĩ về ngành khách sạn và kinh nghiệm trong việc thưởng thức, nghiên cứu các loại đồ uống. Bích Ngọc được các chuyên gia Michelin đánh giá "nổi bật với màn kết hợp thức ăn, đồ uống đa văn hóa, từ rượu vang đến soju nấm thông".</p>
+<p>Món bánh ngó sen cũng là ẩm thực được nhiều thực khách yêu thích, nguyên liệu gồm ngó sen, cá chim vàng, xốt kem hạt thông và củ cần tây.</p>
+<p>Trên ảnh là món salad lạnh gồm bắp cải tím, ớt chuông, cỏ ba lá, mầm dền, bạc hà chanh cùng sò huyết, ốc hương, xốt mù tạt. Trên Google review, nhà hàng được chấm 4,5 sao với hàng chục khách để lại nhận xét. Một số khen không gian riêng tư, rộng rãi, view đẹp, vừa thưởng thức ẩm thực vừa ngắm cảnh thành phố từ trên cao.</p>
+<p>Năm 2026, Michelin vinh danh hai nhà hàng mới Onvit và Upstairs, nâng tổng số cơ sở sở hữu một sao tại Việt Nam lên con số 11. Các nhà hàng được Michelin lựa chọn năm nay được nhiều người kỳ vọng sẽ góp phần nâng cao vị thế nền ẩm thực và du lịch Việt trên bản đồ quốc tế.</p>
+`;
+
 export const mockRestaurants: Restaurant[] = [
   {
     id: '12345',
@@ -25,6 +34,7 @@ export const mockRestaurants: Restaurant[] = [
     awards: ['Top Review VnE'],
     rating: 4.5,
     reviewCount: 1250,
+    articleContent: michelinArticle,
   },
   {
     id: '12346',
@@ -68,6 +78,7 @@ export const mockRestaurants: Restaurant[] = [
     awards: ['Quán ăn lâu đời'],
     rating: 4.7,
     reviewCount: 3200,
+    articleContent: michelinArticle,
   },
   {
     id: '11223',
@@ -132,6 +143,7 @@ export const mockRestaurants: Restaurant[] = [
     awards: ['Quán ăn lâu đời'],
     rating: 4.4,
     reviewCount: 2800,
+    articleContent: michelinArticle,
   },
   {
     id: '33445',
